@@ -1,0 +1,11 @@
+@media (max-width:768px) {
+
+    #cards-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        place-items: center;
+        column-gap: 0;
+    }
+
+
+}
