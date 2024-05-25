@@ -59,9 +59,7 @@ const SearchRecipe = () => {
         e.preventDefault();
         if (!Input.value.trim()) return;
         const response = await FetchData(Input.value.trim());
-        // if (response) {
         FillData(response);
-        // }
     });
 }
 
@@ -73,6 +71,7 @@ function FillData(response) {
 
     CardsContainer.innerHTML = '';
     response.meals.forEach(meal => {
+        if (meal.strSource === '') return;
         let div = document.createElement('div');
         div.classList.add('card');
         div.innerHTML = `
@@ -81,10 +80,11 @@ function FillData(response) {
             </div>
             <div class="recipe-content">
             <h2>${meal.strMeal}</h2>
-            <p class='instructions space'>Instructions:</p>
-            <p class="space">${meal.strInstructions}</p>
+            <a href="${meal.strYoutube}" class="link space" target="_blank">Watch On Youtube</a>
+            <a href="${meal.strSource}" class="link space" target="_blank">Recipe Source</a>
             </div>
         `;
+        CardsContainer.style.padding = "40px 0 40px 0"
         CardsContainer.append(div);
     });
 }

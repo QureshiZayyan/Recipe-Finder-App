@@ -3,19 +3,33 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    background-color: grey;
+    /* background-color: rgb(240, 237, 237); */
     font-family: "Montserrat", sans-serif;
+    scroll-behavior: smooth;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-image: url('bgimg.avif');
+    width: 100vw;
+    height: 40vh;
+    color: white;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #cards-container {
-    margin: 40px 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    background-color: rgb(212, 202, 202);
+    background-color: rgb(122, 122, 124);
 }
 
 .card {
@@ -25,18 +39,18 @@ body {
 }
 
 .recipe-content {
+    height: 100%;
     max-height: 150px;
-    overflow: scroll;
     padding: 5px;
-    background-color: whitesmoke;
+    background-color: rgb(231, 228, 228);
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
-    margin-top: -4px;
+    margin-top: -4.5px;
 }
 
 .card img {
     width: 100%;
-    height: 150px;
+    height: 140px;
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
 }
@@ -45,6 +59,27 @@ body {
     width: 100%;
 }
 
-.space{
-    margin-bottom: 6px;
+.space {
+    margin-bottom: 10px;
+}
+
+.gap {
+    margin-bottom: 20px;
+}
+
+.search input,
+button {
+    padding: 4px 8px;
+    font-weight: bold;
+}
+
+#btn {
+    cursor: pointer;
+}
+
+.link {
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    display: inline-block;
 }
